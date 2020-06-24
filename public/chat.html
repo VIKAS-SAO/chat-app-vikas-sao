@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    
+</head>
+<body>
+    <h1 style="text-align:center">  Real Time Chat App </h1>
+    <div id="member-joined">
+         <h1  >Member Joined</h1>
+         <div id="name-list">
+
+         </div>
+
+          
+       
+    </div>
+
+    <div id="messages">
+
+    </div>
+
+
+    <form id="message-form">
+
+        <input type="text" id="input" placeholder="type message..." >
+        <input type="submit" id="submit" value="send"  >
+
+    </form>
+    <button id="sendlocation"> Share Location</button><br>
+ 
+      
+
+    
+</body>
+<script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat.js"></script>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        #member-joined{
+            position: relative;
+            top: 0px;
+            height:70vh;
+            width: 30vw;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+ 
+        }
+        #name-list{
+            color:darkblue;
+            font-size: 210%;
+            overflow-y: scroll;
+            background-color: lightblue;
+            height: 80%;
+            width:95%;
+
+        }
+        #messages{
+             position: absolute;
+            left:35%;
+            top:50px; 
+            height:70vh;
+            width: 60vw;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            background-color:yellow;
+            overflow-y: scroll;
+
+            
+        } 
+         
+        form{
+            height:10vh;
+            width:100pvw;
+            position: fixed;
+            top:78vh;
+            left:100px;  
+        }
+        #submit{
+            font-size: 35px;
+            height:10vh;
+            width: 15vw; 
+        }
+        #input{
+            font-size: 35px; 
+            height:10vh;
+            width: 60vw; 
+        }
+        .recieved_message{
+            color:red;
+        }
+
+        .outer_self_box{
+            background-color: lightblue;
+            margin-bottom:1px; 
+            border-radius: 10px;
+            height:6%;
+            width:80%;
+            position: relative;
+           float: left;
+           color: black;
+        }
+        .outer_other_box{
+            background-color: rgb(255, 182, 182);
+            margin-bottom:1px;
+            border-radius: 10px;
+            height:6%;
+            width:80%;
+            position: relative;
+            float: right;
+            color: black;
+
+
+        }
+        .notification{
+            background-color: lightgrey;
+            color: black;
+            margin-bottom:1px;
+            height:4%;
+            width:65%;
+            display: inline-block; 
+            border-radius: 10px; 
+            font-size:50%
+        }
+        .sender{
+            position: absolute;
+            left:10%;
+            top:10%;
+            font-size: 70%;
+            font-style: bold;
+        }
+        .time{
+            position: absolute;
+            bottom:10%;
+            right:10%;
+            font-size: 50%; 
+        }
+        .message{
+            font-size:70%;
+
+        }
+
+
+    </style>
+</html>
